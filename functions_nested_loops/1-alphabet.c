@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include "main.h"
+#include "_putchar.c"
 
 /**
  * print_alphabet - Entry point
@@ -8,11 +9,11 @@
 
 void print_alphabet(void)
 {
-int n;
+int sigma;
 
-for (n = 'a'; n <= 'z'; n++)
+for (sigma = 'a'; sigma <= 'z'; sigma++)
 {
-_putchar(n);
+_putchar(sigma);
 }
 _putchar('\n');
 }
