@@ -4,7 +4,7 @@
 /**
  *print_last_digit - Entry point
  *@sigma: The input number
- *Return: Always 0
+ *Return: The last digit
  */
 int print_last_digit(int sigma)
 {
@@ -12,12 +12,8 @@ int alpha;
 alpha = sigma % 10;
 if (alpha < 0)
 {
-_putchar(-1 + 48);
-return (-1);
+alpha = alpha * -1;
 }
-else
-{
-_putchar(1 + 48);
-return (1);
-}
+_putchar(alpha + '0');
+return (alpha);
 }
