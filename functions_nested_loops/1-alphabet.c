@@ -1,6 +1,5 @@
 #include <stdio.h>
 #include "main.h"
-#include "_putchar.c"
 
 /**
  * print_alphabet - Entry point
