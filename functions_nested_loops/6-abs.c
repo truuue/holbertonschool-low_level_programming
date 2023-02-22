@@ -3,6 +3,7 @@
 #include "main.h"
 /**
  *_abs - Entry point
+ *@sigma: The input number
  *Return: Always 0
  */
 int _abs(int sigma)
