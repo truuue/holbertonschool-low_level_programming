@@ -2,6 +2,7 @@
 #include "main.h"
 /**
  *print_to_98 - entry point
+ *@alpha: numbers
  */
 void print_to_98(int alpha)
 {
