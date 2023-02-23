@@ -3,7 +3,7 @@
 
 /**
  * print_line - entry
- * @chad: _
+ * @n: _
  */
 void print_line(int n)
 {
