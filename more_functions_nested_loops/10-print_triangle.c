@@ -2,7 +2,7 @@
 #include "main.h"
 
 /**
- * print_triangle - print square logic ?
+ * print_triangle - print triangle logic ?
  * @beta: size
  */
 void print_triangle(int beta)
@@ -19,7 +19,7 @@ void print_triangle(int beta)
 			for (sigma = 0; sigma < beta; sigma++)
 				putchar('#');
 
-			if (alpha == beta)
+			if (alpha == beta - 1)
 				continue;
 
 			putchar('\n');
