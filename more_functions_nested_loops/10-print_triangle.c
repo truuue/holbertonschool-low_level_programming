@@ -9,21 +9,18 @@ void print_triangle(int beta)
 {
 	int alpha, sigma;
 
-	if (beta > 0)
+	for (alpha = 0; alpha < beta; alpha++)
 	{
-		for (alpha = 1; alpha <= beta; alpha++)
-		{
-			for (sigma = beta - alpha; sigma > 0; sigma--)
-				putchar(' ');
+		for (sigma = 1; sigma < (beta - alpha); sigma--)
+			putchar(' ');
 
-			for (sigma = 0; sigma < beta; sigma++)
-				putchar('#');
+		for (sigma--; sigma < beta; sigma++)
+			putchar('#');
 
-			if (alpha == beta - 1)
-				continue;
+		if (alpha < (beta - 1))
+			continue;
 
-			putchar('\n');
-		}
+		putchar('\n');
 	}
 	putchar('\n');
 }
