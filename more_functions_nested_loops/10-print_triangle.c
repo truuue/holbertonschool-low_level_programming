@@ -8,9 +8,10 @@
 void print_triangle(int beta)
 {
 	int alpha, sigma;
+
 	if (beta > 0)
 	{
-		for (alpha = 1; alpha < beta; alpha++)
+		for (alpha = 1; alpha <= beta; alpha++)
 		{
 			for (sigma = beta - alpha; sigma > 0; sigma--)
 				putchar(' ');
