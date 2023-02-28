@@ -4,6 +4,7 @@
 /**
  * _strlen - main
  * @s: char
+ * Return: a
  */
 
 int _strlen(char *s)
