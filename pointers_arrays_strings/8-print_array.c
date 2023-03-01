@@ -3,6 +3,8 @@
 
 /**
  * print_array - main
+ * @a: pointer
+ * @n: print 
  */
 
 void print_array(int *a, int n)
