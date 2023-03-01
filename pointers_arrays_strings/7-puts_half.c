@@ -2,7 +2,7 @@
 #include "main.h"
 
 /**
- *
+ *puts_half - main
  */
 
 void puts_half(char *str)
