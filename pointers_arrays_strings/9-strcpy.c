@@ -2,7 +2,7 @@
 #include "main.h"
 
 /**
- * _strcpy - main
+ * _strcpy - *dest *src
  * @dest: pointer
  * @src: pointer
  */
