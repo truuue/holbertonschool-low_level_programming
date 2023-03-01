@@ -8,18 +8,18 @@
 
 void rev_string(char *s)
 {
-	char rev = s[0];
 	int a = 0;
-	int b;
+	int b = 0;
+	int c = 0;
 
-	while (s[a] != '\0')
-		a++;
+	for (a = 0; s[a] != 0; a++)
+		c++;
 
-	for (b = 0; b < a; b++)
+	c--;
+	for (b = 0; b <= c / 2; b++)
 	{
-		a--;
-		rev = s[b];
-		s[a] = s[b];
-		s[b] = rev;
+		char swipe = s[b];
+		s[b] = s[c - b];
+		s[c - b] = swipe;
 	}
 }
