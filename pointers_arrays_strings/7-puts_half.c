@@ -3,6 +3,7 @@
 
 /**
  *puts_half - main
+ *@str: string
  */
 
 void puts_half(char *str)
