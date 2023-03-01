@@ -19,6 +19,7 @@ void rev_string(char *s)
 	for (b = 0; b <= c / 2; b++)
 	{
 		char swipe = s[b];
+
 		s[b] = s[c - b];
 		s[c - b] = swipe;
 	}
