@@ -2,9 +2,10 @@
 #include "main.h"
 
 /**
- * _strcpy - *dest *src
+ * _strcpy - main
  * @dest: pointer
  * @src: pointer
+ * Return: dest
  */
 
 char *_strcpy(char *dest, char *src)
