@@ -13,7 +13,7 @@ int _sqrt(int a, int i)
 	if (i * i == a)
 		return (i);
 
-	else if (i * i > a / 2)
+	else if (i * i > a)
 		return (-1);
 
 	else
