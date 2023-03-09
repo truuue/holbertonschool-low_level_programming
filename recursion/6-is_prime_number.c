@@ -16,7 +16,7 @@ int is_prime(int n, int i)
 	else if (i == 1)
 		return (1);
 
-	return (is_prime(n, i - 1));
+	return (is_prime(n, i + 1));
 }
 
 /**
