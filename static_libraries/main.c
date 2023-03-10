@@ -1,7 +1,30 @@
 #include "main.h"
 
-int main(void)
+int _putchar(char c)
 {
-    _puts("\"At the end of the day, my goal was to be the best hacker\"\n\t- Kevin Mitnick");
-    return (0);
+    return _putchar(c);
+}
+
+int _islower(int c)
+{
+    if (c >= 'a' && c <= 'z')
+        return 1;
+    else
+        return 0;
+}
+
+int _isalpha(int c)
+{
+    if ((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z'))
+        return 1;
+    else
+        return 0;
+}
+
+int _abs(int n)
+{
+    if (n < 0)
+        return -n;
+    else
+        return n;
 }
