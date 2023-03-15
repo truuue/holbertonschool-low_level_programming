@@ -5,6 +5,7 @@
 /**
  * _strdup - main
  * @str: char
+ * Return: 0
  */
 
 char *_strdup(char *str)
