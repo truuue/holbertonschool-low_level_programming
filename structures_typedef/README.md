@@ -1,1 +1,1 @@
-This is the structures typedef readme
+This is the structures typedef readme.
