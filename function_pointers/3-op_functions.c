@@ -1,3 +1,4 @@
+#include <stdio.h>
 #include <stdlib.h>
 #include "3-calc.h"
 
@@ -5,7 +6,7 @@
  * op_add - add 2 int
  * @a: int
  * @b: int
- * Return: returns the sum
+ * Return: returns the sum of a and b
  */
 
 int op_add(int a, int b)

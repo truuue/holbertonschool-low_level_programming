@@ -1,3 +1,4 @@
+#include <stdio.h>
 #include <stdlib.h>
 #include "3-calc.h"
 
@@ -10,24 +11,26 @@
 
 int main(int argc, char **argv)
 {
-    int a, b, resultat;
-    char *operateur;
-    int (*operation)(int a, int b);
-    
-    (void)argc;
+	int a, b;
+	int (*operation)(int, int);
 
-    a = atoi(argv[1]);
-    b = atoi(argv[3]);
-    operateur = argv[2];
+	if (argc != 4)
+	{
+		printf("Error\n");
+		exit(98);
+	}
+	operation = get_op_func(argv[2]);
 
-    operation = get_op_func(operateur);
-    if (operation == NULL)
-    {
-        printf("The operator doesnt exist");
-        exit(-1);
-    }
-    resultat = operation(a, b);
-    printf("Resultat est %d\n", resultat);
+	if (operation == NULL || argv[2][1] != '\0')
+	{
+		printf("Error\n");
+		exit(99);
+	}
 
-    return (0);
+	a = atoi(argv[1]);
+	b = atoi(argv[3]);
+
+	printf("%d\n", operation(a, b));
+
+	return (0);
 }
