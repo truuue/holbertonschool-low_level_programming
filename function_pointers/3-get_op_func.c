@@ -1,3 +1,4 @@
+#include <stdio.h>
 #include <stdlib.h>
 #include "3-calc.h"
 
@@ -8,6 +9,7 @@
  */
 
 int (*get_op_func(char *s))(int, int)
+{
 	op_t ops[] = {
 		{"+", op_add},
 		{"-", op_sub},
@@ -16,15 +18,13 @@ int (*get_op_func(char *s))(int, int)
 		{"%", op_mod},
 		{NULL, NULL}
 	};
-
-	int i;
-
+	unsigned int long i;
 	i = 0;
 
 	while (i < 5)
 	{
-		if (*ops[i].op == *s)
-			return (*ops[i].f);
+		if (ops[i].op[0] == s[0])
+			return (ops[i].f);
 
 		i++;
 	}
