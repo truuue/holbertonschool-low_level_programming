@@ -3,7 +3,7 @@
 #include "3-calc.h"
 
 /*
- * main - main func
+ * main - main function
  * @argc: arg count
  * @argv: string in array
  * Return: 0
