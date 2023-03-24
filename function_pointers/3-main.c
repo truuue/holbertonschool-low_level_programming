@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include "3-calc.h"
 
-/*
+/**
  * main - main function
  * @argc: arg count
  * @argv: string in array
