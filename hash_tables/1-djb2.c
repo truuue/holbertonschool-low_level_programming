@@ -1,3 +1,11 @@
+#include "main.h"
+
+/**
+ * hash_djb2 - hash function implementing the djb2 algorithm
+ * @str: generate hash value
+ * Return: hash value
+ */
+
 unsigned long int hash_djb2(const unsigned char *str)
 {
     unsigned long int hash;
@@ -9,28 +17,4 @@ unsigned long int hash_djb2(const unsigned char *str)
         hash = ((hash << 5) + hash) + c; /* hash * 33 + c */
     }
     return (hash);
-}
-julien@ubuntu:~/Hash tables$ 
-julien@ubuntu:~/Hash tables$ cat 1-main.c 
-#include <stdlib.h>
-#include <string.h>
-#include <stdio.h>
-#include "hash_tables.h"
-
-/**
- * main - check the code
- *
- * Return: Always EXIT_SUCCESS.
- */
-int main(void)
-{
-    char *s;
-
-    s = "cisfun";
-    printf("%lu\n", hash_djb2((unsigned char *)s));
-    s = "Don't forget to tweet today";
-    printf("%lu\n", hash_djb2((unsigned char *)s));
-    s = "98";
-    printf("%lu\n", hash_djb2((unsigned char *)s));
-    return (EXIT_SUCCESS);
 }
