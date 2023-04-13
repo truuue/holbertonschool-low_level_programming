@@ -18,10 +18,10 @@ int append_text_to_file(const char *filename, char *text_content)
 		return (1);
 
 	fd = open(filename, O_APPEND | O_WRONLY);
-	
+
 	if (fd == -1)
 		return (-1);
-	
+
 	write_byte = write(fd, text_content, strlen(text_content));
 	if (write_byte == -1)
 		return (-1);
