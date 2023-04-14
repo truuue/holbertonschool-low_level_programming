@@ -3,7 +3,6 @@
 /**
  * hash_table_print - function that prints a hash table
  * @ht: is the hash table
- * @x: check if a key-value pair has already been printed in the hash table
  * If ht is NULL, don’t print anything
  */
 
