@@ -14,7 +14,7 @@ int main(int argc, char *argv[])
 
 	if (argc != 3)
 	{
-		dprintf(STDERR_FILENO, "Usage: cp file_from file_to\n");
+		dprintf(STDERR_FILENO, "%s\n", "Usage: cp file_from file_to\n");
 		exit(97);
 	}
 
@@ -24,7 +24,7 @@ int main(int argc, char *argv[])
 
 	while ((i = read(fd_from, buff, 1024)) > 0)
 	{
-		if (write(fd_to, buff, i) != i || fd_to < 0)
+		if ((write(fd_to, buff, i)) != i || fd_to < 0)
 			file_error(0, -1, argv);
 	}
 
