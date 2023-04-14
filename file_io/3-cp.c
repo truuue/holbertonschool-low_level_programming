@@ -7,7 +7,7 @@
  * Return: 0 on success
  */
 
-int main(int argc, char **argv)
+int main(int argc, char *argv[])
 {
 	int fd_from, fd_to, i;
 	char buff[1024];
