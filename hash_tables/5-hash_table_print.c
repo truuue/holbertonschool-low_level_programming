@@ -23,7 +23,7 @@ void hash_table_print(const hash_table_t *ht)
 		temp = ht->array[i];
 		if (temp != NULL)
 		{
-			if (start == 1)
+			if (x == 1)
 				printf(", ");
 
 			printf("'%s': '%s'", temp->key, temp->value);
@@ -32,8 +32,7 @@ void hash_table_print(const hash_table_t *ht)
 				printf(", ");
 				printf("'%s': '%s'", temp->key, temp->value);
 			}
-
-			start = 1;
+			x = 1;
 		}
 		i++;
 	}
