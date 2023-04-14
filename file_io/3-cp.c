@@ -1,10 +1,9 @@
 #include "main.h"
 
 /**
- * main - function that copies the content of a file to another file
- * @argc: number of arguments
- * @argv: array of arguments
- * Retrun: 0 on success
+ * file_error - checker for opened files
+ * @fd_from: file from
+ * @fd_to: file to
  */
 
 void file_error(int fd_from, int fd_to, char *argv[])
@@ -22,10 +21,17 @@ void file_error(int fd_from, int fd_to, char *argv[])
 	}
 }
 
+/**
+ * main - function that copies the content of a file to another file
+ * @argc: number of arguments
+ * @argv: array of arguments
+ * Return: 0 on success
+ */
+
 int main(int argc, char **argv)
 {
 	int fd_from, fd_to, i;
-	char buf[1024];
+	char buff[1024];
 
 	if (argc != 3)
 	{
@@ -34,14 +40,12 @@ int main(int argc, char **argv)
 	}
 
 	fd_from = open(argv[1], O_RDONLY);
-
 	fd_to = open(argv[2], O_WRONLY | O_CREAT | O_TRUNC, 0644);
-
 	file_error(fd_from, fd_to, argv);
 
-	while ((i = read(fd_from, buf, 1024)) > 0)
+	while ((i = read(fd_from, buff, 1024)) > 0)
 	{
-		if (write(fd_to, buf, i) != i)
+		if (write(fd_to, buff, i) != i && fd_to < 0)
 			file_error(0, -1, argv);
 	}
 
@@ -59,5 +63,5 @@ int main(int argc, char **argv)
 		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", fd_to);
 		exit(100);
 	}
-	return 0;
+	return (0);
 }
