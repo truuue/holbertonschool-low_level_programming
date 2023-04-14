@@ -1,9 +1,10 @@
 #include "main.h"
 
 /**
- * file_error - checker for opened files
- * @fd_from: file from
- * @fd_to: file to
+ * file_error - checks for file read/write errors and exits with error codes
+ * @fd_from: file descriptor of file being read
+ * @fd_to: file descriptor of file being written to
+ * @arv: array of command line arguments
  */
 
 void file_error(int fd_from, int fd_to, char *argv[])
@@ -40,16 +41,16 @@ int main(int argc, char **argv)
 	}
 
 	fd_from = open(argv[1], O_RDONLY);
-	fd_to = open(argv[2], O_WRONLY | O_CREAT | O_TRUNC, 0644);
+	fd_to = open(argv[2], O_CREAT | O_WRONLY | O_TRUNC, 0644);
 	file_error(fd_from, fd_to, argv);
 
 	while ((i = read(fd_from, buff, 1024)) > 0)
 	{
-		if (write(fd_to, buff, i) != i && fd_to < 0)
+		if (write(fd_to, buff, i) != i || fd_to < 0)
 			file_error(0, -1, argv);
 	}
 
-	if (i == -1)
+	if (i < 0)
 		file_error(-1, 0, argv);
 
 	if (close(fd_from) == -1)
