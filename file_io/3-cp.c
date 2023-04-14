@@ -1,28 +1,6 @@
 #include "main.h"
 
 /**
- * file_error - checks for file read/write errors and exits with error codes
- * @fd_from: file descriptor of file being read
- * @fd_to: file descriptor of file being written to
- * @arv: array of command line arguments
- */
-
-void file_error(int fd_from, int fd_to, char *argv[])
-{
-	if (fd_from == -1)
-	{
-		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]);
-		exit(98);
-	}
-
-	if (fd_to == -1)
-	{
-		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[2]);
-		exit(99);
-	}
-}
-
-/**
  * main - function that copies the content of a file to another file
  * @argc: number of arguments
  * @argv: array of arguments
@@ -65,4 +43,26 @@ int main(int argc, char **argv)
 		exit(100);
 	}
 	return (0);
+}
+
+/**
+ * file_error - checks for file read/write errors and exits with error codes
+ * @fd_from: file descriptor of file being read
+ * @fd_to: file descriptor of file being written to
+ * @argv: array of command line arguments
+ */
+
+void file_error(int fd_from, int fd_to, char *argv[])
+{
+	if (fd_from == -1)
+	{
+		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]);
+		exit(98);
+	}
+
+	if (fd_to == -1)
+	{
+		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[2]);
+		exit(99);
+	}
 }
