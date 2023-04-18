@@ -25,8 +25,8 @@ int main(void)
     }
     else
     {
-    ppid = getpid();
     wait(&status);
+    ppid = getpid();
 	printf("After fork my pid is [%d]\n", ppid);
     }
 
