@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <sys/types.h>
 
 int main(int ac, char **av)
 {
