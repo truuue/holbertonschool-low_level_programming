@@ -35,7 +35,11 @@ int main(void)
 		{
 			wait(&status);
 		}
-		free(line);
+        if(line != NULL)
+        {
+            free(line);
+            line = NULL;
+        }
 	}
 	return(0);
 }
