@@ -6,7 +6,6 @@
 #include <sys/types.h>
 #include <sys/wait.h>
 
-
 int main(void)
 {
     size_t len = 0;
