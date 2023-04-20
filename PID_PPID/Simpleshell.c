@@ -33,13 +33,10 @@ int main(void)
 		}
 		else
 		{
-			wait(&status);
+			waitpid(pid, &status, 0);
 		}
-        if(line != NULL)
-        {
-            free(line);
-            line = NULL;
-        }
 	}
+	free(line);
+    line = NULL;
 	return(0);
 }
