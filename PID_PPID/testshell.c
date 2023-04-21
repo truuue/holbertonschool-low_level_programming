@@ -13,6 +13,7 @@ int main(void)
 	char *line = NULL;
 	char *argv[1024];
 	int count = 0, pid = 0, status;
+    int i, spaces = 1;
 	char *token;
 
 	while ((nread = getline(&line, &len, stdin)) != -1)
@@ -23,20 +24,33 @@ int main(void)
 			count = 0;
 
 			token = strtok(line, " \n");
-			if(token == NULL)
-				continue;
 			while (token != NULL)
 			{
-				argv[count++] = token;
+				argv[count] = token;
+				count++;
 				token = strtok(NULL, " \n");
+			}
+
+			for (i = 0; i < strlen(argv[0]); i++)
+            {
+				if (argv[0][i] != ' ')
+                {
+					spaces = 0;
+					break;
+				}
+			}
+			if(spaces)
+            {
+				exit(0);
 			}
 			execve(argv[0], argv, NULL);
 		}
 		else
 		{
-			wait(&status);
+			waitpid(pid, &status, 0);
 		}
 	}
 	free(line);
+    line = NULL;
 	return(0);
 }
