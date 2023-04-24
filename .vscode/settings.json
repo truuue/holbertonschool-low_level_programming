@@ -1,6 +1,7 @@
 {
     "files.associations": {
         "stdlib.h": "c",
-        "simpleshell": "c"
+        "simpleshell": "c",
+        "view.C": "cpp"
     }
 }
