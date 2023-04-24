@@ -15,7 +15,6 @@ int main(void)
     int count = 0, pid = 0, wstatus;
     char *token;
 
-    printf("$ ");
     while ((nread = getline(&line, &len, stdin)) != -1)
     {
         pid = fork();
@@ -24,18 +23,20 @@ int main(void)
             count = 0;
 
             token = strtok(line, " \n");
+            if(token == NULL)
+                continue;
             while (token != NULL)
             {
-                argv[count] = token;
-                count++;
+                argv[count++] = token;
                 token = strtok(NULL, " \n");
             }
             execve(argv[0], argv, NULL);
         }
-        else{
+        else
+        {
             wait(&wstatus);
-            printf("$ ");
         }
     }
+    free(line);
     return(0);
 }

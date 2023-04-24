@@ -2,6 +2,7 @@
     "files.associations": {
         "stdlib.h": "c",
         "simpleshell": "c",
-        "view.C": "cpp"
+        "view.C": "cpp",
+        "Simpleshell3.C": "cpp"
     }
 }
