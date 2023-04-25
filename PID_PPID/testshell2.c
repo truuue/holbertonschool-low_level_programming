@@ -1,10 +1,4 @@
-#include <stdio.h>
-#include <stdlib.h>
-#include <stddef.h>
-#include <unistd.h>
-#include <string.h>
-#include <sys/types.h>
-#include <sys/wait.h>
+#include "main.h"
 
 int main(int ac, char *av[1024], char *envp[])
 {
@@ -34,7 +28,6 @@ int main(int ac, char *av[1024], char *envp[])
 			sprintf(command, "/bin/%s", av[0]);
 			execve(command, av, envp);
 			fprintf(stderr, "Error: command not found\n");
-			exit(1);
 		}
 		else
 		{
