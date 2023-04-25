@@ -3,6 +3,7 @@
         "stdlib.h": "c",
         "simpleshell": "c",
         "view.C": "cpp",
-        "Simpleshell3.C": "cpp"
+        "Simpleshell3.C": "cpp",
+        "main.h": "c"
     }
 }
