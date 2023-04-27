@@ -4,7 +4,9 @@ int main(int ac, char *av[1024], char *envp[])
 {
 	size_t len = 0;
 	ssize_t nread;
-	char *line = NULL, *token;
+    pid_t pid;
+	char *line = NULL, command[1024], *token;
+    char *path = {"/bin/"};
 	int count = 0, pid = 0, status;
 	(void) ac;
 
@@ -24,7 +26,8 @@ int main(int ac, char *av[1024], char *envp[])
 			    token = strtok(NULL, " \n");
 		    }
 		    av[count] = NULL;
-			execve(av[0], av, envp);
+			sprintf(command, "%s%s", path, av[0]);
+			execve(command, av, envp);
 			fprintf(stderr, "Error: command not found\n");
 		}
 		else
