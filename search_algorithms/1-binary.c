@@ -2,7 +2,7 @@
 
 int binary_checker(int *array, size_t size, int value, int left, int right)
 {
-	size_t n = 0;
+	int n = 0;
 	int mid = left + (right - left) / 2;
 
 	if (right >= left)
