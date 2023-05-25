@@ -1,46 +1,40 @@
 #include "search_algos.h"
 
-int binary_checker(int *array, size_t size, int value, int left, int right)
+int binary_search(int *array, size_t size, int value)
 {
-	int n = 0;
-	int mid = left + (right - left) / 2;
+    int n;
+    int mid;
+	int low = 0;
+	int high = size - 1;
 
-	if (right >= left)
+	if (array == NULL)
+    {
+		return (-1);
+    }
+
+	while (low <= high)
 	{
+		mid = (low + high) / 2;
 		printf("Searching in array: ");
-		for (n = left; n <= right; n++)
+
+        n = low;
+		while (n <= high)
 		{
-			if (n == right)
-			{
-				printf("%d", array[n]);
-			}
-			else
-			{
-				printf("%d, ", array[n]);
-			}
+			if (n > low)
+				printf(", ");
+			printf("%d", array[n]);
+            n++;
 		}
 		printf("\n");
 
 		if (array[mid] == value)
-		{
 			return (mid);
-		}
-		if (array[mid] > value)
-		{
-			return (binary_checker(array, value, left, mid - 1, size));
-		}
-		return (binary_checker(array, value, mid + 1, right, size));
+
+		if (array[mid] < value)
+			low = mid + 1;
+
+		else
+			high = mid - 1;
 	}
 	return (-1);
-}
-
-int binary_search(int *array, size_t size, int value)
-{
-	size_t index = 0;
-
-	if (array == NULL)
-		return (-1);
-
-	index = binary_checker(array, value, 0, size - 1, size);
-	return (index);
 }
